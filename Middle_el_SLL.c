@@ -1,3 +1,4 @@
+// Method 1
 #include <stdio.h>
 struct node{
 int data;
@@ -52,4 +53,15 @@ int main(void) {
     printf("\nMiddle element: %d",temp2->data);   
   }
   return 0;
+}
+
+
+// Method 2
+struct ListNode* middleNode(struct ListNode* head){
+    struct ListNode *slow=head, *fast=head;
+    while(fast!=NULL && fast->next!=NULL){
+        slow=slow->next;
+        fast=fast->next->next;
+    }
+    return slow;
 }
