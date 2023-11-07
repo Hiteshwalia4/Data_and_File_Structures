@@ -80,7 +80,7 @@ void demlete(int pos,int n,int arr[]){
 int main() {
   int arr[10];
   int n,choice,ser_el,ser;
-  int max,sl,el,pos;
+  int max,sl,el,pos,noOfAttempts=3;
   printf("Enter number of elements you want in array: ");
   scanf("%d",&n);
 
@@ -147,6 +147,16 @@ int main() {
     else if(choice==6){
       printf("Program Terminated...\n");
       break; 
+    }
+    else{
+      if(noOfAttempts<1) {
+        printf("\nAttempt Limit Reached, Program Terminated :(");
+        break;
+      }
+        
+      printf("\nPlease Enter a Valid Number!!");
+      printf("\nNumber of attempts left: %d",noOfAttempts);
+      noOfAttempts--;
     }
   }
   return 0;
